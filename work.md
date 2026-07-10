@@ -218,3 +218,9 @@ Program Headers:
 &emsp;&emsp;用于从硬件寄存器或栈帧中取出返回地址。参数为0表示是当前函数的返回地址，如果是1则表示上一层函数的返回地址，以此类推。
 2. __builtin_extract_return_addr(...)
 &emsp;&emsp;用于对原始地址解码，若不调用则获取到的地址根据不同平台可能是不同的样子，有可能可以直接读取使用，有可能是混淆过后的地址。
+
+### Github拉取/推送代码
+&emsp;&emsp;现在的github在不使用ssh的情况下是不能直接用账号密码来执行一些操作的，需要使用token，打开github网页，在settings/credentials/Personal access tokens (classic)这里，生成一个Tokens(classic)，然后在仓库中使用
+```bash
+git remote set-url origin https://刚生成的token@github.com/LunaAsuka/对应仓库.git
+```
