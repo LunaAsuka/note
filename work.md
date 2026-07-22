@@ -224,3 +224,10 @@ Program Headers:
 ```bash
 git remote set-url origin https://刚生成的token@github.com/LunaAsuka/对应仓库.git
 ```
+
+### clangd解析失败
+&emsp;&emsp;如果使用一些特殊的编译器，导致有一些特殊的编译指令无法被clangd解析，可以通过在项目根目录创建.clangd文件，使用类似如下选项来忽略特定的编译选项。下示代码表示忽略-mtune=esp-base这个编译选项。
+```c++
+CompileFlags:
+  Remove: [-mtune=esp-base]
+```
